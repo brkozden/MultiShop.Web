@@ -7,7 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\admin-template\help-documentation\assets\.DS_Store" />
+    <None Include="wwwroot\admin-template\help-documentation\assets\blueprint-css\plugins\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\app\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\charts\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\component\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\dist\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\forms\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\maps\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\pages\et-line-font\fonts\.DS_Store" />
+    <None Include="wwwroot\admin-template\html\tables\et-line-font\fonts\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MultiShop.Dto\MultiShop.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

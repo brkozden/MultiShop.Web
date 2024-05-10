@@ -6,7 +6,7 @@ using MultiShop.Catalog.Services.CategoryService;
 
 namespace MultiShop.Catalog.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
@@ -21,13 +21,13 @@ namespace MultiShop.Catalog.Controllers
         public async Task<IActionResult> CategoryList()
         {
             var values = await _categoryService.GetAllCategoriesAsync();
-            return  Ok(values);
+            return Ok(values);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategoryByIdList(string id)
         {
             var values = await _categoryService.GetByIdCategoryAsync(id);
-            return  Ok(values);
+            return Ok(values);
         }
         [HttpPost]
         public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
@@ -35,7 +35,7 @@ namespace MultiShop.Catalog.Controllers
             await _categoryService.CreateCategoryAsync(createCategoryDto);
             return Ok("Yeni Kategori Eklendi.");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(string id)
         {
             await _categoryService.DeleteCategoryAsync(id);
