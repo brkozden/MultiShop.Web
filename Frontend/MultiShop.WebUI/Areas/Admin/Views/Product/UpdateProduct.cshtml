@@ -1,0 +1,51 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Ürün Güncelleme</h4>
+                <p>Ürün güncelleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
+                <br />
+                <div class="bs-example" data-example-id="bordered-table">
+
+                    <form method="post">
+
+                        <div class="form-group">
+                            <input asp-for="ProductId" type="hidden"></input>
+                            <label for="inputProductName">Ürün Adı</label>
+                            <input asp-for="ProductName" type="text" class="form-control" id="inputProductName">
+                            <br />
+                            <label for="inputProductPrice">Ürün Fiyatı</label>
+                            <input asp-for="ProductPrice" type="text" class="form-control" id="inputProductPrice">
+                            <br />
+                            <label for="inputProductImageUrl">Ürün Görseli</label>
+                            <input asp-for="ProductImageUrl" type="text" class="form-control" id="inputProductImageUrl">
+                            <br />
+                            <label>Ürün Kategorisi</label>
+                            @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Categories, new { @style = "padding:0;", @class = "form-control" })
+                            <br />
+                            <label for="inputProductDescription">Ürün Açıklaması</label>
+                            <textarea asp-for="ProductDescription" rows="5" class="form-control" id="inputProductDescription"></textarea>
+                            <br />
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Ürünü Güncelle</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+

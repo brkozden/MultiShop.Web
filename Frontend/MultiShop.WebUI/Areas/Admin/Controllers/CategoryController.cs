@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.Dtos.CatalogDtos.CategoryDtos;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Text;
 
 namespace MultiShop.WebUI.Areas.Admin.Controllers
@@ -40,7 +39,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
         public IActionResult CreateCategory()
         {
             CategoryDefaultBreadcrumb();
-            ViewBag.title4 = "Yeni Kategori Ekleme";
+            ViewBag.title4 = "Yeni Kategori Ekle";
             ViewBag.Ikon2 = "fa fa-plus-square";
             return View();
         }
