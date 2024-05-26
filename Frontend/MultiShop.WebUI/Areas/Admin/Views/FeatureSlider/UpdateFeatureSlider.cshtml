@@ -1,0 +1,46 @@
+﻿@model UpdateFeatureSliderDto
+@{
+    ViewData["Title"] = "UpdateFeatureSlider";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Yeni Öne Çıkan Görseli Güncelleme</h4>
+                <p>Yeni öne çıkan görseli güncelleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
+                <br />
+                <div class="bs-example" data-example-id="bordered-table">
+
+                    <form method="post">
+                        <input asp-for="FeatureSliderId" type="hidden"/>
+                        <div class="form-group">
+                            <label for="inputTitle">Görsel Başlığı</label>
+                            <input asp-for="Title" type="text" class="form-control" id="inputTitle">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputDescription">Görsel Açıklaması</label>
+                            <input asp-for="Description" type="text" class="form-control" id="inputDescription">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputImageUrl">Görsel Linki</label>
+                            <input asp-for="ImageUrl" type="text" class="form-control" id="inputImageUrl">
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Görseli Güncelle</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
