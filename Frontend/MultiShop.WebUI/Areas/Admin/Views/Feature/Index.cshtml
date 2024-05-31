@@ -1,9 +1,9 @@
-﻿@model List<ResultFeatureSliderDto>
-
+﻿@model List<ResultFeatureDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
     int count = 0;
+
 }
 
 <section class="content container-fluid">
@@ -12,8 +12,8 @@
         <div class="col-md-12">
             <div class="chart-box">
                 <div style="display:ruby-text">
-                    <p>Öne Çıkanlar ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
-                    <a class="btn btn-success" href="/Admin/FeatureSlider/CreateFeatureSlider/">Yeni Öne Çıkan Görseli Ekle</a>
+                    <p>Özellikler ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
+                    <a class="btn btn-success" href="/Admin/Feature/CreateFeature/">Yeni Özellik Ekle</a>
                 </div>
                 <br />
                 <div class="bs-example" data-example-id="bordered-table">
@@ -22,9 +22,8 @@
                         <thead>
                             <tr class="text-center">
                                 <th>#</th>
-                                <th></th>
-                                <th>Başlık</th>
-                                <th>Açıklama</th>
+                                <th>Özellik Adı</th>
+                                <th>İkon</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
 
@@ -36,11 +35,10 @@
                                 count++;
                                 <tr>
                                     <th scope="row">@count</th>
-                                    <td class="img-cover text-center"><img src="@item.ImageUrl" width="75px"  /></td>
                                     <td>@item.Title</td>
-                                    <td>@item.Description</td>
-                                    <td><a class="btn btn-danger" href="/Admin/FeatureSlider/DeleteFeatureSlider/@item.FeatureSliderId">Sil</a></td>
-                                    <td><a class="btn btn-primary" href="/Admin/FeatureSlider/UpdateFeatureSlider/@item.FeatureSliderId">Güncelle</a></td>
+                                    <td>@item.Icon</td>
+                                    <td><a class="btn btn-danger" href="/Admin/Feature/DeleteFeature/@item.FeatureId">Sil</a></td>
+                                    <td><a class="btn btn-primary" href="/Admin/Feature/UpdateFeature/@item.FeatureId">Güncelle</a></td>
                                 </tr>
                             }
 

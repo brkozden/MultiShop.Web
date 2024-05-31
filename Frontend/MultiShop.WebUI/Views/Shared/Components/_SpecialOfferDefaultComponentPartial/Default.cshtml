@@ -1,16 +1,21 @@
-﻿<div class="product-offer mb-30" style="height: 200px;">
-    <img class="img-fluid" src="https://wallpapers.com/images/high/guess-sunglasses-male-model-67i11wthz6p1nx73.webp" alt="">
-    <div class="offer-text">
-        <h6 class="text-white mb-3">Gözlüklerde</h6>
-        <h3 class="text-white text-uppercase">20% İNDİRİM</h3>
-        <a href="" class="btn btn-primary">Alışverişe Başla</a>
-    </div>
-</div>
-<div class="product-offer mb-30" style="height: 200px;">
-    <img class="img-fluid" src="https://wallpapers.com/images/high/ring-pictures-49i9yl8hmhnj70av.webp" alt="">
-    <div class="offer-text">
-        <h6 class="text-white mb-3">Takılarda</h6>
-        <h3 class="text-white text-uppercase">15% İNDİRİM</h3>
-        <a href="" class="btn btn-primary">Alışverişe Başla</a>
-    </div>
-</div>
+﻿@model List<ResultSpecialOfferDto>
+@{
+    int count = 0;
+}
+
+@foreach (var item in Model.OrderByDescending(x=>x.SpecialOfferId))
+{
+    if (count<2)
+    {
+        <div class="product-offer mb-30" style="height: 200px;">
+            <img class="img-fluid" src="@item.ImageUrl" alt="">
+            <div class="offer-text">
+                <h6 class="text-white mb-3">@item.SubTitle</h6>
+                <h3 class="text-white text-uppercase">@item.Title</h3>
+                <a href="" class="btn btn-primary">Alışverişe Başla</a>
+            </div>
+        </div>
+        count++;
+    }
+}
+

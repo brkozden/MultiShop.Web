@@ -1,6 +1,7 @@
-﻿@model UpdateFeatureSliderDto
+﻿@model UpdateSpecialOfferDto
+
 @{
-    ViewData["Title"] = "UpdateFeatureSlider";
+    ViewData["Title"] = "UpdateSpecialOffer";
     Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
 }
 
@@ -9,21 +10,21 @@
 
         <div class="col-md-12">
             <div class="chart-box">
-                <h4>Öne Çıkan Görseli Güncelleme</h4>
-                <p>Öne çıkan görseli güncelleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
+                <h4>Özel Teklif Güncelleme</h4>
+                <p>Özel teklif güncelleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
                 <br />
                 <div class="bs-example" data-example-id="bordered-table">
 
                     <form method="post">
-                        <input asp-for="FeatureSliderId" type="hidden"/>
+                        <input asp-for="SpecialOfferId" type="hidden" />
                         <div class="form-group">
-                            <label for="inputTitle">Görsel Başlığı</label>
+                            <label for="inputTitle">Başlık</label>
                             <input asp-for="Title" type="text" class="form-control" id="inputTitle">
                         </div>
                         <br />
                         <div class="form-group">
-                            <label for="inputDescription">Görsel Açıklaması</label>
-                            <input asp-for="Description" type="text" class="form-control" id="inputDescription">
+                            <label for="inputSubTitle">Alt Başlık</label>
+                            <input asp-for="SubTitle" type="text" class="form-control" id="inputSubTitle">
                         </div>
                         <br />
                         <div class="form-group">
@@ -31,7 +32,7 @@
                             <input asp-for="ImageUrl" type="text" class="form-control" id="inputImageUrl">
                         </div>
                         <br />
-                        <button type="submit" class="btn btn-success">Görseli Güncelle</button>
+                        <button type="submit" class="btn btn-success">Özel Teklifi Güncelle</button>
                     </form>
 
 
@@ -41,6 +42,4 @@
 
     </div>
 </section>
-
-
 
