@@ -16,10 +16,13 @@
                     <form method="post">
 
                         <div class="form-group">
-
                             <label for="inputCategoryName">Kategori Adı</label>
                             <input asp-for="CategoryName" type="text"  class="form-control" id="inputCategoryName" >
-
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputImageUrl">Kategori Görseli</label>
+                            <input asp-for="ImageUrl" type="text" class="form-control" id="inputImageUrl">
                         </div>
                         <br />
                         <button type="submit" class="btn btn-success">Kategoriyi Ekle</button>
