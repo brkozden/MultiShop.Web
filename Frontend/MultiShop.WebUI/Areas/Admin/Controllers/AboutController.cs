@@ -23,7 +23,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             AboutDefaultBreadcrumb();
-            ViewBag.title4 = "Hakkımda Bilgisi Listesi";
+            ViewBag.title4 = "Hakkında Bilgisi Listesi";
             ViewBag.Ikon2 = "fa fa-list";
 
             var client = _httpClientFactory.CreateClient();
@@ -41,7 +41,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
         public IActionResult CreateAbout()
         {
             AboutDefaultBreadcrumb();
-            ViewBag.title4 = "Yeni Hakkımda Bilgisi Ekle";
+            ViewBag.title4 = "Yeni Hakkında Bilgisi Ekle";
             ViewBag.Ikon2 = "fa fa-plus-square";
             return View();
         }
@@ -111,10 +111,10 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
         }
         public void AboutDefaultBreadcrumb()
         {
-            ViewBag.title1 = "Hakkımda İşlemleri";
+            ViewBag.title1 = "Hakkında İşlemleri";
             ViewBag.title2 = "Ana Sayfa";
-            ViewBag.title3 = "Hakkımda";
-            ViewBag.Ikon1 = "fa fa-check-square-o";
+            ViewBag.title3 = "Hakkında";
+            ViewBag.Ikon1 = "fa fa-info-circle";
         }
     }
 }
