@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using MultiShop.Catalog.Services.CategoryService;
 using MultiShop.Catalog.Services.FeatureService;
 using MultiShop.Catalog.Services.FeatureSliderService;
+using MultiShop.Catalog.Services.OfferDiscountService;
 using MultiShop.Catalog.Services.ProductDetailService;
 using MultiShop.Catalog.Services.ProductImageService;
 using MultiShop.Catalog.Services.ProductService;
@@ -24,6 +25,7 @@ builder.Services.AddScoped<IProductImageService, ProductImageService>();
 builder.Services.AddScoped<IFeatureSliderService, FeatureSliderService>();
 builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
+builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
 
 
 

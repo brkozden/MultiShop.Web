@@ -1,0 +1,48 @@
+﻿@model UpdateOfferDiscountDto
+@{
+    ViewData["Title"] = "UpdateOfferDiscount";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Günün İndirimi Güncelleme</h4>
+                <p>Günün indirimini güncelleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
+                <br />
+                <div class="bs-example" data-example-id="bordered-table">
+
+                    <form method="post">
+                        <input asp-for="OfferDiscountId" type="hidden" />
+                        <div class="form-group">
+                            <label for="inputTitle">Başlık</label>
+                            <input asp-for="Title" type="text" class="form-control" id="inputTitle">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputSubTitle">Alt Başlık</label>
+                            <input asp-for="SubTitle" type="text" class="form-control" id="inputSubTitle">
+                        </div>
+                        <br />  <div class="form-group">
+                            <label for="inputButtonTitle">Buton Başlığı</label>
+                            <input asp-for="ButtonTitle" type="text" class="form-control" id="inputButtonTitle">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputImageUrl">Görsel Linki</label>
+                            <input asp-for="ImageUrl" type="text" class="form-control" id="inputImageUrl">
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Günün İndirimini Güncelle</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
