@@ -1,0 +1,40 @@
+﻿@model CreateBrandDto
+@{
+    ViewData["Title"] = "CreateBrand";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Yeni Marka Ekleme</h4>
+                <p>Yeni marka ekleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
+                <br />
+                <div class="bs-example" data-example-id="bordered-table">
+
+                    <form method="post">
+
+                        <div class="form-group">
+                            <label for="inputBrandName">Marka Adı</label>
+                            <input asp-for="BrandName" type="text" class="form-control" id="inputBrandName">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputImageUrl">Marka Görseli</label>
+                            <input asp-for="ImageUrl" type="text" class="form-control" id="inputImageUrl">
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Markayı Ekle</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+

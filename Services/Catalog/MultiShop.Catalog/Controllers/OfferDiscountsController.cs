@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MultiShop.Catalog.Dtos.OfferDiscount;
 using MultiShop.Catalog.Services.OfferDiscountService;
 
 namespace MultiShop.Catalog.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class OfferDiscountsController : ControllerBase
@@ -31,19 +33,19 @@ namespace MultiShop.Catalog.Controllers
         public async Task<IActionResult> CreateOfferDiscount(CreateOfferDiscountDto createOfferDiscountDto)
         {
             await _OfferDiscountService.CreateOfferDiscountAsync(createOfferDiscountDto);
-            return Ok("Yeni Özellik Eklendi.");
+            return Ok("Günün İndirimi Eklendi.");
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOfferDiscount(string id)
         {
             await _OfferDiscountService.DeleteOfferDiscountAsync(id);
-            return Ok("Özellik Silindi.");
+            return Ok("Günün İndirimi Silindi.");
         }
         [HttpPut]
         public async Task<IActionResult> UpdateOfferDiscount(UpdateOfferDiscountDto updateOfferDiscountDto)
         {
             await _OfferDiscountService.UpdateOfferDiscountAsync(updateOfferDiscountDto);
-            return Ok("Özellik Güncellendi.");
+            return Ok("Günün İndirimi Güncellendi.");
         }
     }
 }
