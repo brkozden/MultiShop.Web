@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MultiShop.Dtos.CatalogDtos.CategoryDtos;
+using MultiShop.Dtos.CatalogDtos.ProductDetailDto;
 using MultiShop.Dtos.CatalogDtos.ProductDtos;
 using Newtonsoft.Json;
 using System.Text;
@@ -62,7 +63,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
         }
         [Route("CreateProduct")]
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto)
+        public async Task<IActionResult> CreateProduct(CreateProductDto createProductDto,CreateProductDetailDto createProductDetailDto,ResultProductDto resultProductDto)
         {
 
 
@@ -72,7 +73,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             var responseMessage = await client.PostAsync("https://localhost:7001/api/Products", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index", "Product", new { area = "Admin" });
+                return RedirectToAction("ProductListWithCategory", "Product", new { area = "Admin" });
 
             }
 
@@ -86,7 +87,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             var responseMessage = await client.DeleteAsync("https://localhost:7001/api/Products/" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index", "Product", new { area = "Admin" });
+                return RedirectToAction("ProductListWithCategory", "Product", new { area = "Admin" });
             }
             return View();
         }
@@ -135,7 +136,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             var responseMessage = await client.PutAsync("https://localhost:7001/api/Products", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index", "Product", new { area = "Admin" });
+                return RedirectToAction("ProductListWithCategory", "Product", new { area = "Admin" });
 
             }
 

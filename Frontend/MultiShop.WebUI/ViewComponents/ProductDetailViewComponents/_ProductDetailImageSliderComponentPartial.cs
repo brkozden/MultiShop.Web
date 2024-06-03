@@ -22,7 +22,7 @@ namespace MultiShop.WebUI.ViewComponents.ProductDetailViewComponents
                 var values = JsonConvert.DeserializeObject<GetByIdProductImageDto>(jsonData);
                 return View(values);
             }
-            return View(null);
+            return View();
         }
     }
 }

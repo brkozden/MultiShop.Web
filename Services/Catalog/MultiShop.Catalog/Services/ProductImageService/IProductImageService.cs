@@ -14,5 +14,7 @@ namespace MultiShop.Catalog.Services.ProductImageService
 
         Task<GetByIdProductImageDto> GetByProductIdProductImageAsync(string id);
 
+
+
     }
 }
