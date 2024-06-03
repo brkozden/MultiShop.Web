@@ -1,4 +1,4 @@
-﻿namespace MultiShop.Catalog.Dtos.ProductImageDtos
+﻿namespace MultiShop.Dtos.CatalogDtos.ProductImageDto
 {
     public class ResultProductImageDto
     {

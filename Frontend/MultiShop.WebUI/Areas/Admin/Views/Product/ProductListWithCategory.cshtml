@@ -27,6 +27,7 @@
                                 <th>Ürün Adı</th>
                                 <th>Fiyat</th>
                                 <th>Kategori</th>
+                                <th>Ürün Görselleri</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
 
@@ -42,6 +43,7 @@
                                     <td>@item.ProductName</td>
                                     <td>@item.ProductPrice</td>
                                     <td>@item.Category.CategoryName</td>
+                                    <td><a class="btn btn-warning" href="/Admin/ProductImage/ProductImageDetail/@item.ProductId">Ürün Görselleri</a></td>
                                     <td><a class="btn btn-danger" href="/Admin/Product/DeleteProduct/@item.ProductId">Sil</a></td>
                                     <td><a class="btn btn-primary" href="/Admin/Product/UpdateProduct/@item.ProductId">Güncelle</a></td>
                                 </tr>

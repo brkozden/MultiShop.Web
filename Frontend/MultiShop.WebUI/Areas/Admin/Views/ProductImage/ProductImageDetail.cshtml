@@ -1,0 +1,54 @@
+﻿@model UpdateProductImageDto
+@{
+    ViewData["Title"] = "ProductImageDetail";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Ürün Görseli Güncelleme</h4>
+                <p>Ürün görseli güncelleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
+                <br />
+                <div class="bs-example" data-example-id="bordered-table">
+
+                    <form method="post">
+                        <div class="form-group">
+
+                            <input asp-for="ProductImageId" readonly type="hidden" class="form-control">
+                            <input asp-for="ProductId" readonly type="hidden" class="form-control">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImage1">1. Görsel</label>
+                            <input asp-for="Image1" type="text" class="form-control" id="inputImage1">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputImage2">2. Görsel</label>
+                            <input asp-for="Image2" type="text" class="form-control" id="inputImage2">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label for="inputImage3">3. Görsel</label>
+                            <input asp-for="Image3" type="text" class="form-control" id="inputImage3">
+                        </div>
+                        <br />  <div class="form-group">
+                            <label for="inputImage4">4. Görsel</label>
+                            <input asp-for="Image4" type="text" class="form-control" id="inputImage4">
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Ürün Görselini Güncelle</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
