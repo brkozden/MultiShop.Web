@@ -14,6 +14,8 @@ namespace MultiShop.Cargo.DataAccess.Concrete
         public DbSet<CargoDetail> CargoDetails { get; set; }
         public DbSet<CargoOperation> CargoOperations { get; set; }
 
+      
+
 
     }
 }
