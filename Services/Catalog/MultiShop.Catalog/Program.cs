@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using MultiShop.Catalog.Services.AboutService;
 using MultiShop.Catalog.Services.BrandService;
 using MultiShop.Catalog.Services.CategoryService;
+using MultiShop.Catalog.Services.ContactService;
 using MultiShop.Catalog.Services.FeatureService;
 using MultiShop.Catalog.Services.FeatureSliderService;
 using MultiShop.Catalog.Services.OfferDiscountService;
@@ -30,6 +31,7 @@ builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 
 
