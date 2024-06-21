@@ -57,7 +57,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Dtos", "Frontend\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comment", "Comment", "{176E634C-44FC-4409-95DE-A92B6A20DCA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Comment", "Services\Comment\MultiShop.Comment\MultiShop.Comment.csproj", "{8D2B7D48-741B-4926-812F-77D665D91733}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Comment", "Services\Comment\MultiShop.Comment\MultiShop.Comment.csproj", "{8D2B7D48-741B-4926-812F-77D665D91733}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{08172F06-9283-4C89-8CEE-7CDDD4B41FF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.OcelotGateway", "ApiGateway\MultiShop.OcelotGateway\MultiShop.OcelotGateway.csproj", "{665E3734-4167-4B34-BDFE-D96DC2F3E9E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{ED4AA262-A763-4408-9807-F697AF15F563}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Payment", "Services\Payment\MultiShop.Payment\MultiShop.Payment.csproj", "{C04FD55C-3100-469D-BBC5-5572B72A098A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{6EBC27B6-E7D5-4778-BB41-AAC0F48A74F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiShop.Images", "Services\Images\MultiShop.Images\MultiShop.Images.csproj", "{E3D62D4F-6BB4-4455-94C2-6C388D948346}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirement", "Requirement", "{41749190-2D07-4296-8C52-12B385909706}"
+	ProjectSection(SolutionItems) = preProject
+		GenerateToken.txt = GenerateToken.txt
+		OcelotExample.txt = OcelotExample.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +147,18 @@ Global
 		{8D2B7D48-741B-4926-812F-77D665D91733}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D2B7D48-741B-4926-812F-77D665D91733}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D2B7D48-741B-4926-812F-77D665D91733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{665E3734-4167-4B34-BDFE-D96DC2F3E9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{665E3734-4167-4B34-BDFE-D96DC2F3E9E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{665E3734-4167-4B34-BDFE-D96DC2F3E9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{665E3734-4167-4B34-BDFE-D96DC2F3E9E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04FD55C-3100-469D-BBC5-5572B72A098A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04FD55C-3100-469D-BBC5-5572B72A098A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04FD55C-3100-469D-BBC5-5572B72A098A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04FD55C-3100-469D-BBC5-5572B72A098A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D62D4F-6BB4-4455-94C2-6C388D948346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D62D4F-6BB4-4455-94C2-6C388D948346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D62D4F-6BB4-4455-94C2-6C388D948346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D62D4F-6BB4-4455-94C2-6C388D948346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,6 +189,11 @@ Global
 		{ED6AB7B0-CD05-46FE-A089-51BD05B282BC} = {B9C219B9-BE17-4BD1-896A-AD6C475E8549}
 		{176E634C-44FC-4409-95DE-A92B6A20DCA1} = {E5BE9B24-0128-477F-8A3B-3E1DFEA07055}
 		{8D2B7D48-741B-4926-812F-77D665D91733} = {176E634C-44FC-4409-95DE-A92B6A20DCA1}
+		{665E3734-4167-4B34-BDFE-D96DC2F3E9E7} = {08172F06-9283-4C89-8CEE-7CDDD4B41FF6}
+		{ED4AA262-A763-4408-9807-F697AF15F563} = {E5BE9B24-0128-477F-8A3B-3E1DFEA07055}
+		{C04FD55C-3100-469D-BBC5-5572B72A098A} = {ED4AA262-A763-4408-9807-F697AF15F563}
+		{6EBC27B6-E7D5-4778-BB41-AAC0F48A74F2} = {E5BE9B24-0128-477F-8A3B-3E1DFEA07055}
+		{E3D62D4F-6BB4-4455-94C2-6C388D948346} = {6EBC27B6-E7D5-4778-BB41-AAC0F48A74F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F78B9EA4-4E15-42CB-917D-B466F62FDFF2}

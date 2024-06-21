@@ -1,0 +1,78 @@
+﻿@model CreateRegisterDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MultiShop | Kayıt Ol</title>
+    <link rel="stylesheet" href="~/login-form/dist/style.css">
+
+</head>
+<body>
+
+
+    <section>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+
+        <div class="signin">
+
+            <div class="content">
+
+                <h2 >Kayıt Ol</h2>
+
+                <form method="post" class="form">
+
+                    <div class="inputBox">
+
+                        <input type="text" required asp-for="Name">  <i>Ad</i>
+
+                    </div>
+                    <div class="inputBox">
+
+                        <input type="text" required asp-for="Surname"> <i>Soyad</i>
+
+                    </div>  <div class="inputBox">
+
+                        <input type="text" required asp-for="Username"> <i>Kullanıcı Adı</i>
+
+                    </div>  <div class="inputBox">
+
+                        <input type="text" required asp-for="Email"> <i>Email</i>
+
+                    </div>  <div class="inputBox">
+
+                        <input type="password" required asp-for="Password"> <i>Şifre</i>
+
+                    </div>
+                    <div class="inputBox">
+
+                        <input type="password" required asp-for="ConfirmPassword"> <i>Şifre (Tekrar)</i>
+
+                    </div>
+
+                    <div class="links">
+                        <a href="#">Şifremi Unuttum</a> <a href="/Login/Index/">Giriş Yap</a>
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <input type="submit" value="Kayıt Ol">
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+</body>
+</html>

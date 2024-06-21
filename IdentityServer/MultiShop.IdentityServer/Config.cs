@@ -17,6 +17,11 @@ namespace MultiShop.IdentityServer
             new ApiResource("ResourceOrder") {Scopes={"OrderFullPermission"}},
             new ApiResource("ResourceCargo") {Scopes={"CargoFullPermission"}},
             new ApiResource("ResourceBasket") {Scopes={"BasketFullPermission"}},
+            new ApiResource("ResourceOcelot") {Scopes={"OcelotFullPermission"}},
+            new ApiResource("ResourceComment") {Scopes={"CommentFullPermission"}},
+            new ApiResource("ResourcePayment") {Scopes={"PaymentFullPermission"}},
+            new ApiResource("ResourceImages") {Scopes={"ImagesFullPermission"}},
+
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName),
         };
         public static IEnumerable<IdentityResource> IdentityResources => new IdentityResource[]
@@ -33,6 +38,11 @@ namespace MultiShop.IdentityServer
                new ApiScope("OrderFullPermission","Full authority for order operations"),
                new ApiScope("CargoFullPermission","Full authority for cargo operations"),
                new ApiScope("BasketFullPermission","Full authority for basket operations"),
+               new ApiScope("OcelotFullPermission","Full authority for ocelot operations"),
+               new ApiScope("CommentFullPermission","Full authority for comment operations"),
+               new ApiScope("PaymentFullPermission","Full authority for payment operations"),
+               new ApiScope("ImagesFullPermission","Full authority for images operations"),
+
                new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
 
         };
@@ -46,7 +56,7 @@ namespace MultiShop.IdentityServer
                 ClientName = "MultiShop Visitor User",
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
                 ClientSecrets = {new Secret("multishopsecret".Sha256())},
-                AllowedScopes= { "CatalogReadPermission" }
+                AllowedScopes= { "CatalogReadPermission", "OcelotFullPermission", "PaymentFullPermission", "ImagesFullPermission" }
             },
               new Client()
             {
@@ -54,7 +64,13 @@ namespace MultiShop.IdentityServer
                 ClientName = "MultiShop Manager User",
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = {new Secret("multishopsecret".Sha256())},
-                AllowedScopes= { "CatalogReadPermission", "CatalogFullPermission" }
+                AllowedScopes= { "CatalogReadPermission", "CatalogFullPermission", "OcelotFullPermission","CommentFullPermission"
+                  ,"CommentFullPermission","PaymentFullPermission","ImagesFullPermission",
+                      IdentityServerConstants.LocalApi.ScopeName,
+                     IdentityServerConstants.StandardScopes.Email,
+                     IdentityServerConstants.StandardScopes.OpenId,
+                     IdentityServerConstants.StandardScopes.Profile},
+                AccessTokenLifetime=600
             },
                  new Client()
             {
@@ -62,8 +78,8 @@ namespace MultiShop.IdentityServer
                 ClientName = "MultiShop Admin User",
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = {new Secret("multishopsecret".Sha256())},
-                AllowedScopes= { "CatalogReadPermission", "CatalogFullPermission", "DiscountFullPermission", "OrderFullPermission"
-                         ,"CargoFullPermission","BasketFullPermission",
+                AllowedScopes= { "CatalogReadPermission", "CatalogFullPermission", "DiscountFullPermission","OcelotFullPermission", "OrderFullPermission"
+                         ,"CargoFullPermission","BasketFullPermission","CommentFullPermission","PaymentFullPermission","ImagesFullPermission",
                      IdentityServerConstants.LocalApi.ScopeName,
                      IdentityServerConstants.StandardScopes.Email,
                      IdentityServerConstants.StandardScopes.OpenId,

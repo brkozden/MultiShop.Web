@@ -5,7 +5,7 @@ using MultiShop.Catalog.Services.BrandService;
 
 namespace MultiShop.Catalog.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
   
