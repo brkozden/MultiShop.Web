@@ -1,0 +1,15 @@
+﻿using MultiShop.Dtos.CatalogDtos.SpecialOfferDtos;
+
+namespace MultiShop.WebUI.Services.CatalogServices.SpecialOfferService
+{
+    public interface ISpecialOfferService
+    {
+        Task<List<ResultSpecialOfferDto>> GetAllSpecialOfferAsync();
+        Task CreateSpecialOfferAsync(CreateSpecialOfferDto createSpecialOfferDto);
+
+        Task UpdateSpecialOfferAsync(UpdateSpecialOfferDto updateSpecialOfferDto);
+        Task DeleteSpecialOfferAsync(string id);
+
+        Task<UpdateSpecialOfferDto> GetByIdSpecialOfferAsync(string id);
+    }
+}
