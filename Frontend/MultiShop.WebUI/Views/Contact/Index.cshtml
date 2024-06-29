@@ -21,12 +21,12 @@
         <div class="col-lg-7 mb-5">
             <div class="contact-form bg-light p-30">
                 <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post">
+                <form name="sentMessage"  novalidate="novalidate"  method="post">
                     <div class="control-group">
-                        <input type="text" asp-for="NameSurname" class="form-control" id="name" placeholder="Adınız Soyadınız"
+                        <input type="text" asp-for="NameSurname" class="form-control" placeholder="Adınız Soyadınız"
                                required="required" data-validation-required-message="Lütfen Adınızı ve Soyadınızı Giriniz." />
                         <p class="help-block text-danger"></p>
-                    </div> 
+                    </div>
                     
                     <div class="control-group">
                         <input type="email" asp-for="Email" class="form-control" id="email" placeholder="Email Adresiniz"
