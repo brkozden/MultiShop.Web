@@ -16,9 +16,25 @@ namespace MultiShop.WebUI.Controllers
             _basketService = basketService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string code,int discountRate,decimal totalNewPriceWithDiscount,decimal discountAmount)
         {
-           return View();
+            var values = await _basketService.GetBasket();
+            ViewBag.Total = string.Format("{0:0,0}", values.TotalPrice).Replace(",", "."); 
+            var totalPriceWithTax = values.TotalPrice + values.TotalPrice / 100 * 10;
+            var tax = values.TotalPrice / 100 * 10;
+            ViewBag.Tax = string.Format("{0:0,0}", tax).Replace(",", ".");
+            ViewBag.TotalPriceWithTax  = string.Format("{0:0,0}", totalPriceWithTax - ((totalPriceWithTax / 100 * discountRate))).Replace(",", ".");
+            ViewBag.Code = code;
+            ViewBag.DiscountRate = discountRate;
+            ViewBag.TotalNewPriceWithDiscount ="-"+string.Format("{0:0,0}", totalNewPriceWithDiscount).Replace(",", ".") +"₺"; 
+            ViewBag.DiscountAmount = string.Format("{0:0,0}", discountAmount).Replace(",", ".");
+            if (discountAmount == 0 )
+            {
+                ViewBag.DiscountAmount = "Geçersiz İndirim Kodu";
+
+            }
+
+            return View();
         }
         public async Task<IActionResult> AddBasketItem(string id)
         {
