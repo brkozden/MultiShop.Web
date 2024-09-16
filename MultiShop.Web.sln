@@ -74,8 +74,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirement", "Requirement", "{41749190-2D07-4296-8C52-12B385909706}"
 	ProjectSection(SolutionItems) = preProject
 		GenerateToken.txt = GenerateToken.txt
-		OcelotExample.txt = OcelotExample.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Message", "Message", "{46AEFBC8-1DF1-4AE9-BBF0-11A15D742BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShop.Message", "Services\Message\MultiShop.Message\MultiShop.Message.csproj", "{78CDDC23-16DE-4323-A86D-0E9402743836}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +162,10 @@ Global
 		{E3D62D4F-6BB4-4455-94C2-6C388D948346}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3D62D4F-6BB4-4455-94C2-6C388D948346}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3D62D4F-6BB4-4455-94C2-6C388D948346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CDDC23-16DE-4323-A86D-0E9402743836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CDDC23-16DE-4323-A86D-0E9402743836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CDDC23-16DE-4323-A86D-0E9402743836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CDDC23-16DE-4323-A86D-0E9402743836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -194,6 +201,8 @@ Global
 		{C04FD55C-3100-469D-BBC5-5572B72A098A} = {ED4AA262-A763-4408-9807-F697AF15F563}
 		{6EBC27B6-E7D5-4778-BB41-AAC0F48A74F2} = {E5BE9B24-0128-477F-8A3B-3E1DFEA07055}
 		{E3D62D4F-6BB4-4455-94C2-6C388D948346} = {6EBC27B6-E7D5-4778-BB41-AAC0F48A74F2}
+		{46AEFBC8-1DF1-4AE9-BBF0-11A15D742BEB} = {E5BE9B24-0128-477F-8A3B-3E1DFEA07055}
+		{78CDDC23-16DE-4323-A86D-0E9402743836} = {46AEFBC8-1DF1-4AE9-BBF0-11A15D742BEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F78B9EA4-4E15-42CB-917D-B466F62FDFF2}
