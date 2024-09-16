@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MultiShop.IdentityServer.Models;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +26,7 @@ namespace MultiShop.IdentityServer.Controllers
         [HttpGet("GetUser")]
         public async Task<IActionResult> GetUser()
         {
-            var userClaim = User.Claims.FirstOrDefault(x=>x.Type==JwtRegisteredClaimNames.Sub);
+            var userClaim = User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub);
             var user = await _userManager.FindByIdAsync(userClaim.Value);
 
             return Ok(new
@@ -35,6 +37,12 @@ namespace MultiShop.IdentityServer.Controllers
                 Username = user.UserName,
                 Email = user.Email,
             });
+        }
+        [HttpGet("GetAllUserList")]
+        public async Task<IActionResult> GetAllUserList()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            return Ok(users);
         }
     }
 }
