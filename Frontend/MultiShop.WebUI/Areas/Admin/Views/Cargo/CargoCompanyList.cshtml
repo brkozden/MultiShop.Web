@@ -1,19 +1,17 @@
-﻿@model List<ResultSpecialOfferDto>
-
+﻿@model List<ResultCargoCompanyDto>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "CargoCompanyList";
     Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
     int count = 0;
 }
 
 <section class="content container-fluid">
     <div class="row">
-
         <div class="col-md-12">
             <div class="chart-box">
                 <div style="display:flex!important;justify-content:space-between!important">
-                    <p>Özel Teklifler ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
-                    <a class="btn btn-success" href="/Admin/SpecialOffer/CreateSpecialOffer/">Yeni Özel Teklif Ekle</a>
+                    <p>Kargo firmaları ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
+                    <a class="btn btn-success" href="/Admin/Cargo/CreateCargoCompany/">Yeni Kargo Firması Ekle</a>
                 </div>
                 <br />
                 <div class="bs-example" data-example-id="bordered-table">
@@ -22,9 +20,7 @@
                         <thead>
                             <tr class="text-center">
                                 <th>#</th>
-                                <th></th>
-                                <th>Başlık</th>
-                                <th>Alt Başlık</th>
+                                <th>Kargo Firması Adı</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
 
@@ -36,11 +32,9 @@
                                 count++;
                                 <tr>
                                     <th scope="row">@count</th>
-                                    <td class="img-cover text-center"><img src="@item.ImageUrl" width="75px" /></td>
-                                    <td>@item.Title</td>
-                                    <td>@item.SubTitle</td>
-                                    <td><a class="btn btn-danger" href="/Admin/SpecialOffer/DeleteSpecialOffer/@item.SpecialOfferId">Sil</a></td>
-                                    <td><a class="btn btn-primary" href="/Admin/SpecialOffer/UpdateSpecialOffer/@item.SpecialOfferId">Güncelle</a></td>
+                                    <td>@item.CargoCompanyName</td>
+                                    <td><a class="btn btn-danger" href="/Admin/Cargo/DeleteCargoCompany/@item.CargoCompanyId">Sil</a></td>
+                                    <td><a class="btn btn-primary" href="/Admin/Cargo/UpdateCargoCompany/@item.CargoCompanyId">Güncelle</a></td>
                                 </tr>
                             }
 
@@ -54,6 +48,4 @@
 
     </div>
 </section>
-
-
 

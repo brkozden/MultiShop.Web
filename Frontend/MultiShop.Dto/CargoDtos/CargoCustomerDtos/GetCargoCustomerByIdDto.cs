@@ -1,6 +1,6 @@
-﻿namespace MultiShop.Cargo.Entity.Concrete
+﻿namespace MultiShop.Dtos.CargoDtos.CargoCustomerDtos
 {
-    public class CargoCustomer
+    public class GetCargoCustomerByIdDto
     {
         public int CargoCustomerId { get; set; }
         public string Name { get; set; }
@@ -16,7 +16,6 @@
         public string City { get; set; }
 
         public string Address { get; set; }
-
-        public string? UserCustomerId { get; set; }
+        public string UserCustomerId { get; set; }
     }
 }

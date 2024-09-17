@@ -16,5 +16,7 @@
         public string City { get; set; }
 
         public string Address { get; set; }
+        public string UserCustomerId { get; set; }
+
     }
 }

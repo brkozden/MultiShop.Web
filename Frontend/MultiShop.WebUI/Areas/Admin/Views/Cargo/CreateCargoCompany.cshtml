@@ -1,0 +1,36 @@
+﻿@model CreateCargoCompanyDto
+@{
+    ViewData["Title"] = "CreateCargoCompany";
+    Layout = "~/Areas/Admin/Views/Layout/Index.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Yeni Kargo Firması Ekleme</h4>
+                <p>Yeni kargo firması ekleme işlemini aşağıdaki formu doldurarak yapabilirsiniz.</p>
+                <br />
+                <div class="bs-example" data-example-id="bordered-table">
+
+                    <form method="post">
+
+                        <div class="form-group">
+                            <label for="inputCargoCompanyName">Kargo Firma Adı</label>
+                            <input asp-for="CargoCompanyName" type="text" class="form-control" id="inputCargoCompanyName">
+                        </div>
+                        <br />
+                      
+                        <button type="submit" class="btn btn-success">Kargo Firmasını Ekle</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+

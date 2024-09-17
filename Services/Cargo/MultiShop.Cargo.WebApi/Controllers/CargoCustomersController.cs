@@ -41,10 +41,11 @@ namespace MultiShop.Cargo.WebApi.Controllers
                 Email = cargoCustomerDto.Email,
                 District = cargoCustomerDto.District,
                 City = cargoCustomerDto.City,
-                Address = cargoCustomerDto.Address
+                Address = cargoCustomerDto.Address,
+                UserCustomerId = cargoCustomerDto.UserCustomerId,
             };
             _cargoCustomerService.TInsert(cargoCustomer);
-            return Ok("Kargo Çalışanı Başarıyla Oluşturuldu.");
+            return Ok("Kargo Müşterisi Başarıyla Oluşturuldu.");
         }
         [HttpDelete("{id}")]
         public IActionResult RemoveCargoCustomer(int id)
@@ -64,10 +65,16 @@ namespace MultiShop.Cargo.WebApi.Controllers
                Email = cargoCustomerDto.Email,
                District = cargoCustomerDto.District,
                City = cargoCustomerDto.City,
-               Address = cargoCustomerDto.Address
+               Address = cargoCustomerDto.Address,
+               UserCustomerId = cargoCustomerDto.UserCustomerId,
             };
             _cargoCustomerService.TUpdate(cargoCustomer);
-            return Ok("Kargo Çalışanı Başarıyla Güncellendi.");
+            return Ok("Kargo Müşterisi Başarıyla Güncellendi.");
+        }
+        [HttpGet("GetCargoCustomerById")]
+        public IActionResult GetCargoCustomerById(string id)
+        {
+            return Ok(_cargoCustomerService.TGetCargoCustomerById(id));
         }
     }
 }

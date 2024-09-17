@@ -12,7 +12,7 @@
 
         <div class="col-md-12">
             <div class="chart-box">
-                <div style="display:ruby-text">
+                <div style="display:flex!important;justify-content:space-between!important">
                     <p>Kategori ile ilgili işlemlerinizi aşağıdaki tablo üzerinden gerçekleştirebilirsiniz.</p>
                     <a class="btn btn-success" href="/Admin/Category/CreateCategory/">Yeni Kategori Ekle</a>
                 </div>
@@ -26,6 +26,8 @@
                                 <th>Ad Soyad</th>
                                 <th>Kullanıcı Adı</th>
                                 <th>Email</th>
+                                <th>Adres Detayı</th>
+
 
                             </tr>
                         </thead>
@@ -38,6 +40,8 @@
                                     <td>@item.Name @item.Surname</td>
                                     <td>@item.UserName</td>
                                     <td>@item.Email</td>
+                                    <td><a href="/Admin/User/UserAddressInfo/@item.Id" class="btn btn-primary">Adres Detayı</a></td>
+
                                 </tr>
                             }
 
