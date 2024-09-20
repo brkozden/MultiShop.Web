@@ -13,5 +13,8 @@ namespace MultiShop.WebUI.Services.CommentServices
         Task<GetByIdCommentDto> GetByIdCommentAsync(string id);
 
         Task<List<GetByIdCommentDto>> GetCommentListByProductIdAsync(string id);
+
+
+
     }
 }

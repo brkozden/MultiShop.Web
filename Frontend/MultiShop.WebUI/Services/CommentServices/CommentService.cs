@@ -21,6 +21,8 @@ namespace MultiShop.WebUI.Services.CommentServices
             await _httpClient.DeleteAsync("comments/" + id);
         }
 
+     
+
         public async Task<List<ResultCommentDto>> GetAllCommentAsync()
         {
             var responseMessage = await _httpClient.GetAsync("comments");
@@ -45,7 +47,9 @@ namespace MultiShop.WebUI.Services.CommentServices
             return values;
         }
 
-        public async Task UpdateCommentAsync(UpdateCommentDto updateCommentDto)
+       
+
+        public async  Task UpdateCommentAsync(UpdateCommentDto updateCommentDto)
         {
             await _httpClient.PutAsJsonAsync<UpdateCommentDto>("comments", updateCommentDto);
         }

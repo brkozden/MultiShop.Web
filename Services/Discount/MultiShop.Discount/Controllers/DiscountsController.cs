@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.Discount.Dtos;
 using MultiShop.Discount.Services;
@@ -58,6 +57,12 @@ namespace MultiShop.Discount.Controllers
         {
              await _discountService.DeleteDiscountCouponAsync(id);
             return Ok("İndirim Kuponu Başarıyla Silindi.");
+        }
+        [HttpGet("GetDiscountCouponCount")]
+        public async Task<IActionResult> GetDiscountCouponCount()
+        {
+            var value = await _discountService.GetDiscountCouponCount();
+            return Ok(value);
         }
     }
 }

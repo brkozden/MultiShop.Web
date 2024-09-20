@@ -12,7 +12,7 @@
     "MultiShop.Images": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:7008",
       "environmentVariables": {
