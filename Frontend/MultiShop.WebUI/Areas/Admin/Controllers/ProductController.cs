@@ -4,6 +4,7 @@ using MultiShop.Dtos.CatalogDtos.ProductDetailDto;
 using MultiShop.Dtos.CatalogDtos.ProductDtos;
 using MultiShop.WebUI.Services.CatalogServices.CategoryService;
 using MultiShop.WebUI.Services.CatalogServices.ProductService;
+using Newtonsoft.Json;
 
 namespace MultiShop.WebUI.Areas.Admin.Controllers
 {
@@ -14,12 +15,16 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
 
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        public ProductController(IProductService productService, ICategoryService categoryService, IHttpClientFactory httpClientFactory)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _httpClientFactory = httpClientFactory;
         }
+
+       
 
         [Route("Index")]
         public async Task<IActionResult> Index()
@@ -60,14 +65,14 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
 
 
             await _productService.CreateProductAsync(createProductDto);
-            return RedirectToAction("ProductListWithCategory", "Product", new { area = "Admin" });
+            return RedirectToAction("Index", "Product", new { area = "Admin" });
 
         }
         [Route("DeleteProduct/{id}")]
         public async Task<IActionResult> DeleteProduct(string id)
         {
             await _productService.DeleteProductAsync(id);
-            return RedirectToAction("ProductListWithCategory", "Product", new { area = "Admin" });
+            return RedirectToAction("Index", "Product", new { area = "Admin" });
 
         }
         [Route("UpdateProduct/{id}")]
@@ -101,7 +106,7 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
         {
 
             await _productService.UpdateProductAsync(updateProductDto);
-            return RedirectToAction("ProductListWithCategory", "Product", new { area = "Admin" });
+            return RedirectToAction("Index", "Product", new { area = "Admin" });
 
 
         }
@@ -112,15 +117,15 @@ namespace MultiShop.WebUI.Areas.Admin.Controllers
             ViewBag.title4 = "Ürün Listesi";
             ViewBag.Ikon2 = "fa fa-list";
 
-            //var client = _httpClientFactory.CreateClient();
-            //var responseMessage = await client.GetAsync("https://localhost:7001/api/Products/ProductListWithCategory");
-            //if (responseMessage.IsSuccessStatusCode)
-            //{
-            //    var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            //   var values = JsonConvert.DeserializeObject<List<ResultProductWithCategoryDto>>(jsonData);
-            //    return View(values);
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7001/api/Products/ProductListWithCategory");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultProductWithCategoryDto>>(jsonData);
+                return View(values);
+            }
             return View();
-
         }
         public void ProductDefaultBreadcrumb()
         {
